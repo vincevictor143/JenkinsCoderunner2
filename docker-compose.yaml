@@ -2,7 +2,7 @@ version: "3"
 services:
   hub:
     image: selenium/hub:4.15.0
-    container_name: selenium-hub
+    
   chrome:
     image: selenium/node-chrome:4.15.0
     shm_size: '2g'
