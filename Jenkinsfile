@@ -3,21 +3,41 @@ pipeline
    agent any
    stages
    {
-      stage('execute cucumber tests')
+
+      stage('Pull the image')
       {
           steps
           {
-             bat "docker-compose up"
+             bat "docker pull attbatch1/executescriptwithconfigurationfile"
           }
       }
-      
-      stage('Bring docker compose down')
+
+      stage('Start the Grid')
       {
           steps
           {
-             bat "docker-compose down"
+             bat "docker-compose up -d hub chrome firefox"
           }
       }
+
+      stage('executing cucumber testcases')
+      {
+          steps
+          {
+             bat "docker-compose up cucumbertestcases"
+          }
+      }
+   }
+
+   post{
+
+      always
+      {
+
+         bat "docker-compose down"
+      }
+
+
    }
 
 }

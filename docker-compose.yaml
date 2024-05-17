@@ -26,7 +26,8 @@ services:
   cucumbertestcases:
     image: attbatch1/executescriptwithconfigurationfile
     depends_on:
-      - hub
+      - chrome
+      - firefox
     environment:
       - HUB_HOST=hub
     volumes:
