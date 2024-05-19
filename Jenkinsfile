@@ -8,7 +8,7 @@ pipeline
       {
           steps
           {
-             bat "docker pull attbatch1/executescriptwithconfigurationfile"
+             bat "docker pull attbatch1/entireconfigurationinyaml"
           }
       }
 

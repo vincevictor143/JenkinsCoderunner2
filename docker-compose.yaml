@@ -24,7 +24,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   cucumbertestcases:
-    image: attbatch1/executescriptwithconfigurationfile:latest
+    image: attbatch1/entireconfigurationinyaml
     depends_on:
       - chrome
       - firefox
